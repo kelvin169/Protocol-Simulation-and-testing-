@@ -1,74 +1,52 @@
- # Cloud-Based Web App for Protocol Simulation and Network Scanning
+### System Architecture Overview:
 
- ##Overview
+#### 1. **Cloud Infrastructure**
+- **Cloud Provider:** AWS (Amazon Web Services)
+- **Services Used:**
+  - **EC2 (Elastic Compute Cloud):** To host and run the web servers and backend services.
+  - **RDS (Relational Database Service):** For managing databases in a scalable manner.
+  - **Elastic Load Balancing:** To distribute incoming application traffic across multiple EC2 instances, ensuring durability and fault tolerance.
+  - **S3 (Simple Storage Service):** For storing logs, backups, and other static files.
+  - **CloudFront:** As a CDN to distribute content to end-users with low latency.
+  - **IAM (Identity and Access Management):** To manage access to AWS services securely.
+  - **VPC (Virtual Private Cloud):** To create a secured private network to deploy AWS resources.
 
-This repository outlines the system architecture for a cloud-based web application designed to simulate network protocols such as Modbus TCP/IP, BACnet IP, and MSTP, and to provide robust network scanning capabilities. The architecture is built to be robust, scalable, and secure, leveraging various services from AWS (Amazon Web Services). The details of the front-end, back-end, and cloud infrastructure components are covered comprehensively in this README.
+#### 2. **Back-End Architecture**
+- **Technology Stack:**
+  - **Node.js:** For handling business logic due to its non-blocking I/O and event-driven nature, ideal for network-heavy tasks.
+  - **Express.js:** A minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
+- **APIs:**
+  - **RESTful API:** To facilitate communication between the front-end and back-end.
+  - **WebSockets:** For real-time data transfer, especially useful in network scanning and protocol simulation.
+- **Database:**
+  - **PostgreSQL (AWS RDS):** Chosen for its reliability and feature set, ideal for complex queries and data integrity.
+- **Security Features:**
+  - **JWT (JSON Web Tokens):** For secure transmission of information as an authentication token.
+  - **HTTPS:** Ensured by default for all communications between the clients and the server.
+  - **Network Security Groups:** To control inbound and outbound traffic to resources.
 
-##System Architecture Overview
+#### 3. **Front-End Architecture**
+- **Technology Stack:**
+  - **React.js:** A powerful library for building user interfaces, particularly for single-page applications where dynamic content is a must.
+  - **Redux:** For managing application state.
+  - **Material-UI:** For designing a responsive and visually appealing user interface.
+- **Features:**
+  - **Interactive Dashboard:** For displaying real-time data, logs, and analysis results.
+  - **User Authentication Views:** Login, registration, and user profile management.
+  - **Protocol Configuration and Management:** UI components that allow users to configure settings for different protocols.
 
-###1. **Cloud Infrastructure**
+#### 4. **Development and Deployment**
+- **Version Control:**
+  - **Git:** With repositories hosted on GitHub.
+- **Continuous Integration/Continuous Deployment:**
+  - **Jenkins/AWS CodePipeline:** For automating the testing and deployment of the application code from GitHub to AWS.
+- **Containerization:**
+  - **Docker:** To containerize the application, ensuring consistency across multiple development and production environments.
+- **Monitoring and Logging:**
+  - **AWS CloudWatch:** To monitor applications and services, capturing logs, metrics, and events.
 
-####Cloud Provider
-**AWS (Amazon Web Services)**
+#### 5. **Compliance and Security**
+- Ensure compliance with data protection regulations (e.g., GDPR, CCPA) by implementing proper data handling and user consent management.
+- Regular security audits and updates to address any vulnerabilities in the application.
 
-####Services Used
-- **EC2 (Elastic Compute Cloud)**: Hosts and runs the web servers and backend services.
-- **RDS (Relational Database Service)**: Manages databases efficiently and at scale.
-- **Elastic Load Balancing**: Distributes incoming application traffic across multiple EC2 instances to ensure durability and fault tolerance.
-- **S3 (Simple Storage Service)**: Stores logs, backups, and other static files.
-- **CloudFront**: Serves as a CDN to distribute content to end-users with reduced latency.
-- **IAM (Identity and Access Management)**: Manages secure access to AWS services.
-- **VPC (Virtual Private Cloud)**: Provides a secure private network for deploying AWS resources.
-
-###2. **Back-End Architecture**
-
-####Technology Stack
-- **Node.js**: Handles business logic, suited for network-heavy tasks due to its non-blocking I/O and event-driven capabilities.
-- **Express.js**: A flexible web application framework that offers a robust set of features for web and mobile apps.
-
-####APIs
-- **RESTful API**: Facilitates communication between the front-end and back-end.
-- **WebSockets**: Enables real-time data transfer, critical for network scanning and protocol simulation.
-
-####Database
-- **PostgreSQL (AWS RDS)**: Chosen for its reliability, ideal for complex queries and ensuring data integrity.
-
-####Security Features
-- **JWT (JSON Web Tokens)**: Secures transmission of information as authentication tokens.
-- **HTTPS**: Ensures all communications between the clients and the server are secure.
-- **Network Security Groups**: Controls inbound and outbound traffic to resources.
-
-###3.**Front-End Architecture**
-
-####Technology Stack
-- **React.js**: Builds dynamic user interfaces, particularly useful for single-page applications.
-- **Redux**: Manages application state.
-- **Material-UI**: Designs responsive and aesthetically pleasing user interfaces.
-
-####Features
-- **Interactive Dashboard**: Displays real-time data, logs, and analysis results.
-- **User Authentication Views**: Includes login, registration, and user profile management.
-- **Protocol Configuration and Management**: Provides UI components for configuring settings for different protocols.
-
-###4. **Development and Deployment**
-
-####Version Control
-- **Git**: Repositories hosted on GitHub.
-
-#### Continuous Integration/Continuous Deployment
-- **Jenkins/AWS CodePipeline**: Automates testing and deployment of application code from GitHub to AWS.
-
-####Containerization
-- **Docker**: Containerizes the application, ensuring consistency across development and production environments.
-
-####Monitoring and Logging
-- **AWS CloudWatch**: Monitors applications and services, capturing logs, metrics, and events.
-
-###5.**Compliance and Security**
-
-- Ensures compliance with data protection regulations such as GDPR and CCPA through proper data handling and user consent management.
-- Regular security audits and updates are conducted to address vulnerabilities in the application.
-
-##Conclusion
-
-The designed architecture provides a solid foundation for a scalable, secure, and efficient web-based system that simulates network protocols and performs network scanning. It balances real-time data handling with robust security measures, ensuring system reliability and user trust.
+This architecture provides a solid foundation for a scalable, secure, and efficient web-based system that simulates network protocols and performs network scanning. It balances real-time data handling with strong security measures, ensuring the system's reliability and user trust
