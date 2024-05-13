@@ -1,29 +1,29 @@
 ### System Architecture Overview:
 
 #### 1. **Cloud Infrastructure**
-- **Cloud Provider:** AWS (Amazon Web Services)
-- **Services Used:**
-  - **EC2 (Elastic Compute Cloud):** To host and run the web servers and backend services.
-  - **RDS (Relational Database Service):** For managing databases in a scalable manner.
-  - **Elastic Load Balancing:** To distribute incoming application traffic across multiple EC2 instances, ensuring durability and fault tolerance.
-  - **S3 (Simple Storage Service):** For storing logs, backups, and other static files.
-  - **CloudFront:** As a CDN to distribute content to end-users with low latency.
-  - **IAM (Identity and Access Management):** To manage access to AWS services securely.
-  - **VPC (Virtual Private Cloud):** To create a secured private network to deploy AWS resources.
+ **Cloud Provider:** AWS (Amazon Web Services)
+ **Services Used:**
+   **EC2 (Elastic Compute Cloud):** To host and run the web servers and backend services.
+   **RDS (Relational Database Service):** For managing databases in a scalable manner.
+   **Elastic Load Balancing:** To distribute incoming application traffic across multiple EC2 instances, ensuring durability and fault tolerance.
+   **S3 (Simple Storage Service):** For storing logs, backups, and other static files.
+   **CloudFront:** As a CDN to distribute content to end-users with low latency.
+   **IAM (Identity and Access Management):** To manage access to AWS services securely.
+   **VPC (Virtual Private Cloud):** To create a secured private network to deploy AWS resources.
 
 #### 2. **Back-End Architecture**
-- **Technology Stack:**
-  - **Node.js:** For handling business logic due to its non-blocking I/O and event-driven nature, ideal for network-heavy tasks.
-  - **Express.js:** A minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
-- **APIs:**
-  - **RESTful API:** To facilitate communication between the front-end and back-end.
-  - **WebSockets:** For real-time data transfer, especially useful in network scanning and protocol simulation.
-- **Database:**
-  - **PostgreSQL (AWS RDS):** Chosen for its reliability and feature set, ideal for complex queries and data integrity.
-- **Security Features:**
-  - **JWT (JSON Web Tokens):** For secure transmission of information as an authentication token.
-  - **HTTPS:** Ensured by default for all communications between the clients and the server.
-  - **Network Security Groups:** To control inbound and outbound traffic to resources.
+ **Technology Stack:**
+   **Node.js:** For handling business logic due to its non-blocking I/O and event-driven nature, ideal for network-heavy tasks.
+   **Express.js:** A minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
+ **APIs:**
+   **RESTful API:** To facilitate communication between the front-end and back-end.
+   **WebSockets:** For real-time data transfer, especially useful in network scanning and protocol simulation.
+ **Database:**
+   **PostgreSQL (AWS RDS):** Chosen for its reliability and feature set, ideal for complex queries and data integrity.
+ **Security Features:**
+   **JWT (JSON Web Tokens):** For secure transmission of information as an authentication token.
+   **HTTPS:** Ensured by default for all communications between the clients and the server.
+   **Network Security Groups:** To control inbound and outbound traffic to resources.
 
 #### 3. **Front-End Architecture**
 - **Technology Stack:**
